@@ -1,6 +1,7 @@
 ﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="/struts-tags" prefix="s" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -89,23 +90,23 @@
 													<TD>手机</TD>
 													<TD>操作</TD>
 												</TR>
-												<c:forEach items="${list }" var="customer">
+												<s:iterator value="customerList" var="customer">
 												<TR
 													style="FONT-WEIGHT: normal; FONT-STYLE: normal; BACKGROUND-COLOR: white; TEXT-DECORATION: none">
-													<TD>${customer.custName }</TD>
-													<TD>${customer.custLevel }</TD>
-													<TD>${customer.custSource }</TD>
-													<TD>${customer.custLinkman }</TD>
-													<TD>${customer.custPhone }</TD>
-													<TD>${customer.custMobile }</TD>
+													<TD><s:property value="cust_name"/></TD>
+													<TD><s:property value="#customer.cust_name"/></TD>
+													<TD><s:property value="#customer.cust_name"/></TD>
+													<TD><s:property value="#customer.cust_name"/></TD>
+													<TD><s:property value="#customer.cust_name"/></TD>
+													<TD><s:property value="#customer.cust_name"/></TD>
 													<TD>
-													<a href="${pageContext.request.contextPath }/customerServlet?method=edit&custId=${customer.custId}">修改</a>
+													<a href="${pageContext.request.contextPath }/Customer_edit.action?cust_id=<s:property value="#customer.cust_id"/>">修改</a>
 													&nbsp;&nbsp;
-													<a href="${pageContext.request.contextPath }/customerServlet?method=delete&custId=${customer.custId}">删除</a>
+													<a href="${pageContext.request.contextPath }/Customer_delete.action?cust_id=<s:property value="#customer.cust_id"/>">删除</a>
 													</TD>
 												</TR>
 												
-												</c:forEach>
+												</s:iterator>
 
 											</TBODY>
 										</TABLE>

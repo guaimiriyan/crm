@@ -6,8 +6,12 @@
 
 <struts>
     <package name="customerAction" namespace="/" extends="struts-default">
-        <action name="Customer_*"   method="{1}">
-
+        <global-results>
+            <result name="success">/jsp/success.jsp</result>
+            <result name="error">/jsp/error.jsp</result>
+        </global-results>
+        <action name="Customer_*" class="customerAction" method="{1}">
+            <result name="list">/jsp/customer/list.jsp</result>
         </action>
     </package>
 </struts>

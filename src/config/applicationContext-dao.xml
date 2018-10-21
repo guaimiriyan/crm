@@ -32,7 +32,7 @@
    </property>
        <property name="mappingResources">
            <list>
-               <value></value>
+               <value>com/lyj/Domain/Customer.hbm.xml</value>
            </list>
        </property>
    </bean>

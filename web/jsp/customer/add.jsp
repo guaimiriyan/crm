@@ -15,7 +15,7 @@
 </HEAD>
 <BODY>
 	<FORM id=form1 name=form1
-		action="${pageContext.request.contextPath }/customer_save.action"
+		action="${pageContext.request.contextPath }/Customer_save.action"
 		method=post>
 		
 

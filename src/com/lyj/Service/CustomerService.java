@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface CustomerService {
     public List<Customer> SelectCustomerList();
+    public boolean saveCustomer(Customer customer);
+    public boolean deleteCustomerById(Customer customer);
 }
